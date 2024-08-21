@@ -27,5 +27,4 @@ jobs:
       - uses: actions/checkout@v4
       - uses: cachix/install-nix-action@v27
       - run: env
-      - run: echo this step is gonna fail
       - run: nix run .#deploy

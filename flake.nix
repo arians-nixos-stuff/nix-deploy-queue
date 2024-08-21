@@ -23,6 +23,7 @@
             echo "Deploying..."
             env
             sleep 50
+            exit
           '';
         };
       });
