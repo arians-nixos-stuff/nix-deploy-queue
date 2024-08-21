@@ -16,6 +16,15 @@
       packages = forAll (selfPackages: pkgs: {
         grafana = pkgs.grafana;
         default = selfPackages.grafana;
+
+        deploy = pkgs.writeShellApplication {
+          name = "deploy";
+          program = pkgs.writeScriptBin "deploy" ''
+            echo "Deploying..."
+            env
+            sleep 50
+          '';
+        };
       });
 
       devShells = forAll (_: pkgs: { });
