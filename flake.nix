@@ -19,10 +19,11 @@
 
         deploy = pkgs.writeShellApplication {
           name = "deploy";
-          program = pkgs.writeScriptBin "deploy" ''
+          text = ''
             echo "Deploying..."
             env
             sleep 50
+            exit
           '';
         };
       });
